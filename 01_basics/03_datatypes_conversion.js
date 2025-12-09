@@ -1,5 +1,7 @@
 //Investigation to check value conversion of mixed dt
 
+
+
 let score = "40ab"
 
 //two method to check datatype
