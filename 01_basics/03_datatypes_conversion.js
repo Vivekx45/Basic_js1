@@ -1,5 +1,5 @@
 //Investigation to check value conversion of mixed dt
-
+//In conversion the converted dt first letter must be capital like(String())
 
 
 let score = "40ab"
