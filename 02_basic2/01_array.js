@@ -37,7 +37,7 @@ console.log(arr.includes(2))  // check specified value held or not return true/f
 console.log(arr.indexOf(3))  //check which element at specified idx, if idx not available (-1)
 
 
-imp stuff 
+// imp stuff you'll use it often
 
 const oldArr = [0, 1, 2, 3, 4, 5]
 const newOne = oldArr.join()
@@ -81,7 +81,7 @@ const all_hero = marvel.concat(dc);
 console.log(all_hero)
 
 //so concat also often used to merge array instead of that use "spread" operator
-const all_new_heroes = [...marvel, ...dc]
+const all_new_heroes = [...marvel, ...dc];
 console.log(all_new_heroes);
 
 
