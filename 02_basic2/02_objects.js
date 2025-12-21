@@ -165,8 +165,29 @@ console.log(tinderUser.hasOwnProperty("IsLoggedIn"));
 
 
 
+//Part-3 
+//Destructuring of objects  (MIMP thing you should know)
+
+const course = {
+    courseName : "JS",
+    price : 999,
+    courseTutor : "Vivek"
+}
+
+//to get rid of multiple times usage of obj access we use this thing called 
+//Object de-structuring
+// course.courseTutor
+
+const {courseTutor : teacher} = course   // const {keyname : used_to_call} = obj_name
+// console.log(courseTutor);  //can call like this
+console.log(teacher);       //or by assigning an 
 
 
+//de-structuring concept used in react like shown below that's why we learning...
+const navbar = ({company}) => {
+
+}
+navbar(company = "VIvek")
 
 
 
