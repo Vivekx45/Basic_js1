@@ -8,6 +8,11 @@ Statically typed languages check data types at compile-time, requiring explicit 
 //1) Primitive datatypes
 /*
 String, Number, Boolean, null, undefined, Symbol, BigInt 
+
+Primitive types are the most basic building blocks. They represent a single value and are immutable, meaning the value itself cannot be changed once created. 
+Memory Storage: Stored directly in stack memory by value.
+Behavior: When you copy a primitive, a new independent copy of the value is created.
+
 */
 
 /*
@@ -49,6 +54,10 @@ console.log(typeof big_num);   //bigint
 //2) Reference type (Non-Primitive datatypes)
 /*
 Array, Objects, Functions
+
+Non-primitive types are complex entities that can store collections of values or more structured data. They are mutable, meaning their content can be modified. 
+Memory Storage: The actual data is stored in heap memory, while the variable only holds a reference (a memory address) in the stack.
+Behavior: When you copy a non-primitive, you only copy the reference to the same object. Changing one variable will affect the other because they point to the same memory location.
 */
 
 //Array
