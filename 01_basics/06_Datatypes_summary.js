@@ -1,5 +1,9 @@
 // Javascript is dynamically typed language
 
+/*
+Statically typed languages check data types at compile-time, requiring explicit type declarations (like Java, C++) for early error detection, better performance, and code clarity, while dynamically typed languages check types at runtime, allowing flexible, implicit type assignment (like Python, JavaScript) but potentially catching errors later during execution
+*/
+
 // Datatype are of basically 2 types :-
 //1) Primitive datatypes
 /*
