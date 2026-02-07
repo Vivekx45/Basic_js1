@@ -41,11 +41,13 @@ console.log("result", ans)
 function loginUserMsg(username){
     // if(username === undefined){
     //     console.log("please enter a username");
+    //     return
         
     // }
     //or 
     if(!username){                 // exclamatory sign use as false
         console.log("please enter a username");
+        return
     }
     return `${username} just logged in`
 }
