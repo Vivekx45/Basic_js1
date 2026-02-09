@@ -21,20 +21,20 @@ const user = {
 
 console.log(this);   //now in that single log execution it refers to an empty object, thus there is no context in global scope 
 // here this shows empty object (i.e {}) in this node environment
-// but in browser console environment it shows 'Window' object.
+// but in browser console environment it shows 'Window' object., but in node env. it a global object.
 
 //interview que - what is most global object in browser console i.e 'window' object.
 
 
-function chai(){
-    let username = "Vivek"
-    console.log(this.username);  // here this keyword isn't work in function it only works in object
+// function chai(){
+//     let username = "Vivek"
+//     console.log(this.username);  // here this keyword isn't work in function it only works in object
     
-}
+// }
 
 // chai()  
 //in any function execution of this keyword in node env. it provides a lot of detail to it.
-// this keyword only works in objects
+// this keyword only works in objects only in node env.
 
 
 // const chai = function(){
