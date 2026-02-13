@@ -1,7 +1,11 @@
 //Here we gonna learn about Loops(Iterations)
 //Types - For loops, WHile loop, Do while loop
 
-//For loop
+// For loop -A for loop is used to execute a block of code a specific, known number of times or to iterate
+// over a sequence (such as a list, array, or string). It is ideal for situations requiring repeated, fixed-count actions,
+// such as traversing data structures, counting, or running operations a set number of times. 
+
+
 //syntax
 /*
 for(initialization;  condition; increment/ decrement) {
