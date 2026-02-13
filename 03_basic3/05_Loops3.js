@@ -1,3 +1,11 @@
+// High ORder Array Loops - Higher-order array loops (methods) are used to write cleaner, more readable, and more declarative code 
+// by abstracting common data processing patterns like transforming, filtering, and accumulating array elements. 
+// They promote a functional programming style and make code more reusable and modular. 
+
+//Array loops are the most useful part of programming due we have to fetch most of the data
+//from arrays often.
+
+
 // for-of loop (array specific loop) - kindly similar to python for loop
 
 const arr= [1, 2, 3, 4, 5]
@@ -62,9 +70,3 @@ for (const [key,value] of myObj) {
 
 
 
-// High ORder Array Loops - Higher-order array loops (methods) are used to write cleaner, more readable, and more declarative code 
-// by abstracting common data processing patterns like transforming, filtering, and accumulating array elements. 
-// They promote a functional programming style and make code more reusable and modular. 
-
-//Array loops are the most useful part of programming due we have to fetch most of the data
-//from arrays often.
