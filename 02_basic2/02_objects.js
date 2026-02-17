@@ -8,9 +8,19 @@ objects can be declare of 2 types by literals, constructors
 */
 
 // Object.create we can also declare object like this, this is the constructor method
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  
+  greet() {
+    console.log("Hello!");
+  }
+}
 
-
-//Object literals
+const user1 = new User("Bob", 25);
+const user2 = new User("Charlie", 40);
 
 
 //Interview que - to add symbol as a key in object
@@ -25,6 +35,7 @@ console.log(mySymbo)     //here key appears as Symbol(key1)
 
 //Main story 
 
+//Object literals
 const JsUser = {
     name: "Vivek",     //name (i.e any key you define treated as string i.e "name")
     "full_name": "Vivek Tetwal",
