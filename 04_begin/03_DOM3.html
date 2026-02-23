@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM # </title>
+    <style>
+        *{
+            background-color: grey;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    //TRAVERSING ON WHOLE (PARENT TO CHILDS AND VICE VERSA)
+    //using parent to use properties on child 
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children);        //most often use this prop. due to get HTML Collection kind of array
+    // console.log(parent.children[1].innerHTML);   //to access indexed 1st element and it value
+
+    //using normal for loop to get whole values of parent.
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML);
+        
+    }
+
+    //adding some styling\
+    parent.children[1].style.color = 'Red'   //chnage color to red
+
+    //IMp properties you should know.
+    //these property used to get first and last child of the parent to manipulate them(useful)
+    // console.log(parent.firstElementChild);
+    // console.log(parent.lastElementChild);
+
+
+    //Now using child to move to parent to use properties.
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.parentElement);   //most often used to reach parent element to apply prop. to it.
+    // console.log(dayOne.nextElementSibling);  //to get next sibling to use property.
+    
+    //interesting thing 
+    console.log("NODES: ", parent.childNodes); //this prop. usd to get whole tree of behind work of whole tree in form 'NodeList'
+    //this property shows each and every space and empty line has it own significane.
+
+    
+</script>
+</html>
