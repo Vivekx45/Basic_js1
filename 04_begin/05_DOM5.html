@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=q, initial-scale=1.0">
+    <title>DOM Edit and Remove</title>
+    <style>
+        *{
+            background-color: grey;
+            color: #fff;
+
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+    // making a function which adds list items in ul
+    function addLang(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector(".language").appendChild(li)
+    }
+
+    //passing new languages.
+    addLang("Python")
+    addLang("c++")
+    //but this func isn't optimized as pov of DSA the optimized func. is
+
+    //the optimized func is 
+    function addOptmLang(langName) {
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(li);
+    }
+    //more optimized func to add lang to ul
+    addOptmLang("Typescript")
+
+
+    // Edit values
+
+    //changing the value 1-type 
+    const secLang = document.querySelector('li:nth-child(2)');
+    
+    // secLang.innerHTML = "Java"  //not optimized way but could be an approach
+    
+    //another opt. approach 2-type
+    const newLi = document.createElement('li');
+    newLi.textContent = "Java";
+    secLang.replaceWith(newLi);
+
+    // 3-type
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li> React </li>'
+
+
+    // Remove values
+    const lastLang = document.querySelector("li:last-child") 
+    lastLang.remove()
+
+</script>
+</html>
