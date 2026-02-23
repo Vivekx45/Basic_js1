@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM creating Node List/ New Element </title>
+</head>
+<style>
+        *{
+            background-color: grey;
+
+        }
+    </style>
+<body>
+    
+</body>
+
+<script>
+    //method used to create element
+    const divEle = document.createElement('div')
+    console.log(divEle);
+
+    //Now adding attributes to ele
+    divEle.className = "main"
+    divEle.id = Math.round(Math.random() * 10 + 1)  //just for we generate a random id 
+    
+    //anther method to set attributes to ele
+    divEle.setAttribute("title", 'generated-title') //more optimized method to use.
+    divEle.style.backgroundColor = "green"
+    divEle.style.padding = "12px"
+    
+    
+    // divEle.innerHTML = "VIVek Javascript prac."
+    
+    //or you can do like this, above method and below are debating method (both are applicable to add value to ele)
+    const addText = document.createTextNode("VIVek Javascript prac.")
+    divEle.appendChild(addText)
+    
+    //you didn't see that ele bcz ele is only held in memory
+    //you need to attach that ele, to attach it be like.
+    document.body.appendChild(addText)
+</script>
+</html>
