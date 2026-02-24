@@ -12,23 +12,87 @@
 <body>
     <div class="bg-black">
         <h1>topics - DOM selectors, Nodelist and HTMLCollection</h1>
-        <h1 id = 'title' class="heading">
+        <h1 id = 'title' class="heading" name = 'Header'>
             DOM learning on Chai aur Code <span style="display: none;">test text</span>
         </h1>
         <h2>Heading 2</h2>
         <h3>Heading 3</h3>
         <p>
-            whole related info to this file is in copy of JS.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, similique?
         </p>
         <input type="password" name="Put a password"> 
 
         <ul>
-            <li id=""class = "liItem">x</li>
-            <li id=""class = "liItem">y</li>
-            <li id=""class = "liItem">z</li>
-            <li id=""class = "liItem">a</li>
+            <li id="lis" class = "liItem">x</li>
+            <li id="lis" class = "liItem">y</li>
+            <li id="lis" class = "liItem">z</li>
+            <li id="lis" class = "liItem">a</li>
         </ul>
         
     </div>
+
+    <script> 
+        //Mostly code in only works in console of browser.
+
+        //DOM Selectors, NodeList and HTMLCollection
+
+        //Selectors
+        // document.getElementById()
+        // document.getElementsByClassName() //a huge diff by element and elements
+        
+
+        //Attributes and manipulate its values by some properties (only works in console)
+        document.getElementById('title').id  // to get id val
+        document.getElementById('title').className  // to get className val
+        
+        //but if you do some properties here it will work in bg but didn't show in console.
+        document.getElementById('title').getAttribute('name')
+        document.getElementById('title').setAttribute('id','title1')
+
+
+        //Declaring and manipulating content to element
+        title1.innerText    //used to get only content which is visible 
+        title1.textContent  //used to get all hidden content even not visible 
+        title1.innerHTML    //used to get content with inner html elements with tags
+
+
+        //Query selector - to select first occurence of certain element (can declare id, class, tag[with their attribute])
+        document.querySelector('#title1')    // by id 
+        document.querySelector('.heading')   // by className
+        document.querySelector('h1')         // by tag
+        document.querySelector('input[type = "password"]')    //even can access by attributes
+        
+
+        //Query selector All - to select all items 
+        document.querySelectorAll('li')
+        /* you'll get NodeList not an array, so whenever we want to know what methods we can apply on them 
+        we need to consolelog that , and this NodeList kind of similar to array.
+        
+        - we cannot .style.color types method on it bcz it has collection of all values 
+        we have to select each item and manipulate them
+        */
+        const tempHoldli = document.querySelectorAll('li')
+        tempHoldli[0].style.color = "green" //this will work by individually manipulate them
+       
+        // if a single ele is held on document and to manipulate and change its property by NodeListyou need to provide its idx val.
+        tempHoldli[1].style.backgroundColor = 'yellow'
+        
+        //NodeList supports forEach such we use it 
+        tempHoldli.forEach( (item) => {
+            item.style.border = "2px solid white"
+        })
+
+
+        //Selector by className
+        const headingClass = document.getElementsByClassName('heading')
+        //this HTML collection doesn't have loop facility we need to convert it to Array
+
+        //to convert into array
+        const arrHeadingClass = Array.from(headingClass)
+        // now we can apply loop
+        arrHeadingClass.forEach( (itm) => {
+            itm.style.border = "2px solid yellow"
+        })
+    </script>
 </body>
 </html>
