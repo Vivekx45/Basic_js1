@@ -1,0 +1,5 @@
+Whole info. is in JS copy
+
+Asynchronous programming in JavaScript is a technique that allows your program to start long-running tasks and continue responding to other events while those tasks run, rather than waiting for them to finish. 
+
+Normally, JavaScript is synchronous and single-threaded, meaning it executes code line-by-line in a strict sequence. If one line takes a long time (like fetching data from a database), it "blocks" the entire program, making the UI appear frozen. Asynchronous programming solves this by letting time-consuming tasks run in the background.
