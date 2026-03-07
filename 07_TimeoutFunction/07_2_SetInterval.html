@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SetInterval function.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //SetInterval method - it perform task contiuously after certain interval.
+    
+    //Section to start setInterval exection
+    //what needs to be execute
+    const dateAndName =  function(str){
+        console.log(str,Date.now);
+        
+    }
+    
+    //how it will be execute
+    document.querySelector("#start").addEventListener('click',function(){
+        execution  = setInterval(dateAndName,2000, "Vivek str2")
+        console.log("setInterval Event started");
+    })//this method can take 3rd parameter
+
+
+    //Section to stop setInterval execution    
+    //to stop that continuous execution we can add an event to it
+    document.querySelector("#stop").addEventListener('click',function(){
+        clearInterval(execution)
+        console.log("setInterval Event Stopped");
+             
+    })
+
+</script>
+</html>

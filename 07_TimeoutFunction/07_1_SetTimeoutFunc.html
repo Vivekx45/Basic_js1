@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SetTimeout function.</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    //SetTimeout method, it's a method which calls API, these aren't part of core js.
+    setTimeout(function(){
+        // console.log("Vivek Tetwal");
+        
+    }, 2000)    //setTimeout(handler) handler is function/callback which hasn't individual name, also requires a time in ms, so this func do tasks single time after certain time .
+
+    //we can also set reference of another func in it shown below
+    const sayVivek = function(){
+        // console.log("Vivek");
+        
+    }
+    setTimeout(sayVivek,4000)
+
+    // we can also chnage name of h1 through this method
+    const changeTextH1 = function() {
+        document.querySelector('h1').innerHTML = "best coding practice"
+    }
+    const changeH1 = setTimeout(changeTextH1, 3000) // even if we store that method in reference it will executes.
+
+    //We must also have an option to stop that timeout exectuion in case we need in future, for that a method clearTimeout used
+    // clearTimeout(changeH1)  //it requires an reference to stop that certain execution, now it will stop that certain execution, 
+    // but this isn't a correct way to declare that we need to declare it into an event so it clears when that event executes, so it'be like shown
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeH1)
+        console.log("Stopped");
+        
+    }) //with the help of this event we would successfully stopped that execution.
+
+
+
+
+
+    //check it out about.
+    //SetInterval method - it perform task contiuously after certain interval.
+    //discussed in next part
+
+</script>
+</html>
