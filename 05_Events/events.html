@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>   <!-- this 'onclick' approach isn't good to use-->
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+/* 
+All events runs sequentially cuz js is sequential language, any activity is being performed (like mouse click, mouse drag, move etc. )called event in js there are multiple events held, which are listed
+*/
+    // document.getElementById('owl').onclick = function() {
+    //     alert("OWL clicked")
+    // }    this approach of onclick also not recommended to use. instead of that we should use addEventListner which is feasible cuz this method used for event-propagation feature.
+    
+    /* 
+    
+    Events list
+    
+    -> Mouse Events :-
+    - click : The most common event, triggered when a user clicks an element (e.g., a button or link).
+    - mouseover / mouseout: Useful for simple hover effects, like changing an element's style 
+    when the mouse pointer moves over it or leaves it.
+    
+    
+    -> Keyboard Events :-
+    - keydown : Fires when a user presses a key down, which is crucial for handling keyboard input.
+    
+    
+    -> Form Events :- 
+    - change : Triggers when the value of an input field, dropdown, or checkbox is altered.
+    - submit : Fired when a form is submitted. You can use this to validate data before sending     
+              it to a server.
+    - focus / blur : Occur when an element gains or loses focus, often used for form validation          
+                    or showing tooltips.
+
+
+    -> Window Events :-
+    - load : Fires when the entire page and all its resources (images, stylesheets, etc.) have 
+             fully loaded, allowing you to run code after everything is ready
+             
+    */
+    //you must practice the int. ques based on events (PTR) point to remember
+    // TOpics to study(based on events) - 
+    // type, timestamp, preventdefault,defaultPrevented, target, toElemenet, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    
+    //3rd way which is eventlistner most useful method which we gonnna use a lot. it used 
+    // listen multiple events(like drag, click etc.)
+    
+    //4th way / alternate approach by attachevent() method - used early 
+    //5th way / jQuery framework used
+
+    //interview que. - why 3rd parameter(false)('default' used no need to define often) used to enables event bubbling
+
+    //best appraoch(3rd)
+    //here used function(event object) - which is most imp obj. provides most events 
+    document.getElementById('owl').addEventListener('click', function(event){
+        // alert('Owl clicked AGain....')\
+        // console.log(eve);  
+
+    }, true) 
+    /*
+    *******************MIMP point(meaning) about event propogation*********************************
+    event propogation (true/false(default))<in-context>(event capture/ event bubble(default))
+        "means when true(event capture declared as 3rd argument) - it worked as top-bottom approach means first parent(ul) listner would call and then child(li) would call
+
+        meanwhile when false(event bubble by default) declared it worked as bottom-top approach means children (li) would call first then parent(ul) event would call. 
+        "
+        default event bubble used, but sometimes you could have need to use event capture 
+        some examples to comprehend event propogation shown below.  
+    */
+    document.getElementById('images').addEventListener('click', function(event){
+        //    console.log("clicked inside the ul");
+    }, false) 
+
+    document.getElementById('owl').addEventListener('click', function(event){
+        //    console.log("owl clicked");
+
+           // to stop event propagation(bubbling) from parent (ul) used a method with event object called stopPropagation
+           event.stopPropagation()
+    }, false) 
+       
+
+    //Same as stoppropagation another method used defaultPrevented, for that we track google image, this method stops the default behavior of the event like in below example it goes to google site when image would clicked to stop it we use this method
+    document.getElementById('google').addEventListener('click', function(e){
+        //stops default working
+        e.preventDefault()
+        //also we can stop event propagation
+        e.stopPropagation()
+        // console.log('google clicked');
+        
+    },false)
+
+    
+    // let's do some project type work.
+    //for ex we want to click an image and it vanishes out automatically, shown below
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        // console.log(e);
+        // console.log(e.target); //used to get from which target we got this event in console of browser
+        // console.log(e.target.parentNode); //another method we can use to target parent to completely vanish it
+
+        // Now to remove, we have 2 approaches 
+        // let removeIt = e.target.parentNode
+        // 1)
+        // removeIt.remove()
+        // 2)
+        // removeIt.parentNode.removeChild(removeIt); //little bit confusing, cuz we have to jump to parent node then remove it
+
+
+        // we got some problem if we click on li bullet points then it vanishes whole li so to cope that we can use another method called 'tagName' from which we can get event tag name like if we click on image then it returns IMG if click on bullet points it return LI
+        console.log(e.target.tagName);
+        if(e.target.tagName === "IMG"){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+    },false)   
+
+
+
+
+</script>
+</html>
