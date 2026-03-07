@@ -1,0 +1,3 @@
+Here we gonna learn about promises, fetch , .this, .catch and some info about api's
+
+there's a less concept of classes used in javascript.
