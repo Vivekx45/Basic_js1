@@ -1,0 +1,14 @@
+randomuser.me - used to get random users api and could be checked and read by
+'json formatter' site.
+
+or 
+
+api.github.com/users/vivektetwal - to get own github api 
+
+
+// APi request
+
+- now a day fetch() method used to call api's
+
+but before this method developed Ajax programming used to request APIs
+KNown Asynchronous Javascript and XML (XMLHttpRequest) used

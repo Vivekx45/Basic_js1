@@ -1,0 +1,7 @@
+- Console log/Console - it's technically a part of core/could not be javascript, its basically a debugging tool i.e browsers debug tool, it injects runtime of js.
+- for ex - document also isn't a part of core js, they are excessive apis
+- core js comrprises ->
+- basic arithmetic opn,some basic func their execution, loops
+TO understand some advance topics -
+- we know that js comprises some environments, fact that node.js is an implementation of v8 engine, there's a lot of engines which runs js, v8 engine is whole developed with c++
+So V8 engine -> it provides multiple debugging tools, api's access, also the console.log is actually a part of v8 engine, javascripts runtime environment provide this facility.
